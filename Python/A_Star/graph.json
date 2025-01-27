@@ -1,0 +1,16 @@
+{
+    "nodes": [
+      {"id": "A", "x": 0, "y": 0},
+      {"id": "B", "x": 1, "y": 2},
+      {"id": "C", "x": 4, "y": 2},
+      {"id": "D", "x": 5, "y": 5},
+      {"id": "E", "x": 8, "y": 5}
+    ],
+    "edges": [
+      {"source": "A", "target": "B", "weight": 2.5},
+      {"source": "A", "target": "C", "weight": 5.0},
+      {"source": "B", "target": "D", "weight": 3.0},
+      {"source": "C", "target": "D", "weight": 2.0},
+      {"source": "D", "target": "E", "weight": 3.0}
+    ]
+  }
