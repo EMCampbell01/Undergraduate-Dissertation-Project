@@ -4,7 +4,8 @@
 declare -A SCRIPTS=(
     [1]="Matrix_Multiplication/matrix_multiplication.py"
     [2]="Matrix_Multiplication/matrix_multiplication_numpy.py"
-    [3]="Conways_Game_Of_Life/life.py"
+    [3]="Quick_Sort/quick_sort.py"
+    [4]="Conways_Game_Of_Life/life.py"
 )
 
 # Display the list of scripts for the user to choose from
