@@ -1,6 +1,7 @@
-from gridv1 import Grid
+from grid import Grid
 from python import Python
 import time
+
 
 def run_display(
     owned grid: Grid,

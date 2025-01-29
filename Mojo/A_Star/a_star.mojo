@@ -1,99 +1,194 @@
+from collections import Dict, Set
 from python import Python
-from collections import Dict
+from math import sqrt
 
 @value
 struct Edge(StringableRaising):
-    var target: String 
+
+    var target: String
     var weight: Int
 
     def __str__(self) -> String:
-        return "Edge(target=" + self.target + ", weight=" + str(self.weight) + ")"
-
+        str_rep = "{target: " + self.target + ", weight: " + str(self.weight) + "}"
+        return str_rep
 
 @value
 struct Node(StringableRaising):
+
     var name: String
     var x: Int
     var y: Int
     var edges: List[Edge]
 
     def __str__(self) -> String:
-        # Start with node information
-        var result = "Node(name=" + self.name + ", x=" + str(self.x) + ", y=" + str(self.y) + ", edges=["
-        # Add string representations of edges
+
+        str_rep = "{\n\tname: " + self.name + ",\n\tx: " + str(self.x) + ",\n\ty: " + str(self.y) + ",\n\tedges: {\n"
+
         for edge in self.edges:
-            result += edge.__str__() + ", "
-        # Remove trailing comma and space, then close the list
-        if len(self.edges) > 0:
-            result = result[:-2]
-        result += "])"
-        return result
+            str_rep += "\t\t" + str(edge[])
+            str_rep += ",\n "
 
-    def add_edge(self, target: String, weight: Int):
-        """Add an edge to this node."""
-        self.edges.append(Edge(target=target, weight=weight))
+        str_rep += "\t}\n}"
 
+        return str_rep
 
-@value
+    fn add_edge(mut self, edge: Edge) -> None:
+        self.edges.append(edge)
+
+@value 
 struct Graph(StringableRaising):
+
     var nodes: Dict[String, Node]
 
-    fn __init__(out self, nodes: Dict[String, Node] = Dict[String, Node]()):
-        self.nodes: Dict[String, Node] = nodes
+    @staticmethod
+    def from_json(json_data: String) -> Graph:
+
+        json = Python.import_module("json")
+        data = json.loads(json_data)
+        
+        graph = Graph(Dict[String, Node]())
+
+        # Add nodes
+        for node in data["nodes"]:
+            graph.add_node(str(node["id"]), int(node["x"]), int(node["y"]))
+
+        # Add edges
+        for edge in data["edges"]:
+            graph.add_edge(str(edge["source"]), str(edge["target"]), int(edge["weight"]))
+
+        return graph
 
     def __str__(self) -> String:
-        print("*** Printing Graph ***")
-        var result: String = "Graph(nodes=["
 
-        # Safely check for "A" in the dictionary
-        if "A" in self.nodes:
-            print("Node A exists:", str(self.nodes["A"]))
-        else:
-            print("Node A does not exist.")
+        str_rep = String()
+        str_rep = "{"
 
-        # Loop through nodes in the dictionary
         for node in self.nodes.values():
-            print("Looping through node:", str(node))
-            result += node.__str__() + ", "
+            str_rep += "\n" + str(node[]) +","
 
-        if len(self.nodes) > 0:
-            result = result[:-2]  # Remove trailing comma
-        result += "])"
-        return result
+        str_rep += "\n}"
 
-    def add_node(self, name: String, x: Int, y: Int):
-        """Add a node to the graph."""
-        if not self.nodes.__contains__(name):
-            self.nodes[name] = Node(name=name, x=x, y=y, edges=List[Edge]())
-            print("Added node:", str(self.nodes[name]))
+        return str_rep
+
+    fn add_node(mut self, name: String, x: Int, y: Int) -> None:
+
+        if name not in self.nodes:
+            self.nodes[name] = Node(name, x, y, List[Edge]())
+
+    fn add_edge(mut self, source: String, target: String, weight: Int) raises -> None:
+        
+        if source not in self.nodes or target not in self.nodes:
+            raise Error("Both nodes {source} and {target} must exist before adding an edge.")
+
+        self.nodes[source].add_edge(Edge(target, weight))
+
+    fn get_neighbors(self, node_name: String) raises -> List[Tuple[String, Int]]:
+
+        var neighbors = List[Tuple[String, Int]]()
+
+        for edge in self.nodes[node_name].edges:
+            neighbors.append((edge[].target, edge[].weight))
+
+        return neighbors
+
+    fn heuristic(self, node_name: String, target_id: String) raises -> Float64:
+
+        var node = self.nodes[node_name]
+        var target = self.nodes[target_id]
+
+        var dist = sqrt((Float64(node.x) - Float64(target.x)) ** 2 + (Float64(node.y) - Float64(target.y)) ** 2)
+        return dist
+
+    fn compare_nodes(self, a: Tuple[Float64, String], b: Tuple[Float64, String]) -> Int:
+        if a[0] < b[0]:
+            return -1
+        elif a[0] > b[0]:
+            return 1
         else:
-            print("Node with name '" + name + "' already exists.")
+            return 0
+
+    def get_path(self, start_node: String, end_node: String) -> List[String]:
+        opened_nodes = List[Tuple[Float64, String]]()
+        closed_nodes = Set[String]()
+
+        g_costs = Dict[String, Float64]()
+        f_costs = Dict[String, Float64]()
+        parents = Dict[String, String]()
+
+        g_costs[start_node] = 0
+        h_cost = self.heuristic(start_node, end_node)
+        f_costs[start_node] = h_cost
+
+        opened_nodes.append((f_costs[start_node], start_node))
+
+        def manual_sort():
+            for i in range(len(opened_nodes)):
+                min_idx = i
+                for j in range(i+1, len(opened_nodes)):
+                    if opened_nodes[j][0] < opened_nodes[min_idx][0]:
+                        min_idx = j
+                if min_idx != i:
+                    opened_nodes[i], opened_nodes[min_idx] = opened_nodes[min_idx], opened_nodes[i]
+
+        while len(opened_nodes) > 0:
+            manual_sort()
+            current_f_cost, current_node = opened_nodes.pop(0)
+
+            if current_node == end_node:
+
+                path = List[String]()
+                step = end_node
+                while step != start_node:
+                    path.append(step)
+                    step = parents[step]
+                path.append(start_node)
+                return path
+
+            closed_nodes.add(current_node)
+
+            for entry in self.get_neighbors(current_node):
+                var neighbor = entry[][0]
+                var weight = entry[][1]
+                
+                if neighbor in closed_nodes:
+                    continue
+
+                tentative_g_cost = g_costs[current_node] + weight
+
+                if neighbor not in g_costs or tentative_g_cost < g_costs[neighbor]:
+                    parents[neighbor] = current_node
+                    g_costs[neighbor] = tentative_g_cost
+                    h_cost = self.heuristic(neighbor, end_node)
+                    f_costs[neighbor] = tentative_g_cost + h_cost
+
+                    var found = False
+                    for item in opened_nodes:
+                        if neighbor == item[][1]:
+                            found = True
+                            break
+
+                    if not found:
+                        opened_nodes.append((f_costs[neighbor], neighbor))
+
+        raise Error("Path not found")
 
 
-def read_json():
+def main():
 
-    json = Python.import_module("json")
+    nd = Dict[String, Node]()
+    g = Graph(nd)
 
+    # Load JSON from file
     with open("graph.json", "r") as f:
         json_data = f.read()
+
+    # Create a graph instance from JSON
+    graph = Graph.from_json(json_data)
+
+    path = graph.get_path("A", "E")
+    for step in path:
+        print(str(step[]))
+
+    print("end.")
     
-    data = json.loads(json_data)
 
-    print(data)
-
-# Main function
-def main():
-    
-    # Create an edge instance
-    edge1 = Edge(target="B", weight=5)
-    edge2 = Edge(target="C", weight=10)
-
-    # Print the edge instances
-    print("Edge 1: " + str(edge1))
-    print("Edge 2: " + str(edge2))
-
-    edges = List[Edge](edge1, edge2)
-
-    graph = Graph()
-    graph.add_node("A", 0, 0)
-    print("Graph:", str(graph))
