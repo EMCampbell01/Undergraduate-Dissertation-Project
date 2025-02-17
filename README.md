@@ -6,5 +6,5 @@ This project presents a comparative analysis of CPython and Mojo for evaluating 
 
 The project contains two main directories, one for Python and one for Mojo, each containing:
 
-Implementation directories for different algorithms being tested.
-Benchmarking scripts to automate performance measurement and comparison.
+- Implementation directories for different algorithms being tested.
+- Benchmarking scripts to automate performance measurement and comparison.
