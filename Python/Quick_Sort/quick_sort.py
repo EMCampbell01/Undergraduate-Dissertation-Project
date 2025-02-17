@@ -14,7 +14,7 @@ def quick_sort(arr):
 
 if __name__ == "__main__":
 
-    for i in range(10000):
+    for i in range(10):
         
         unsorted_list = [random.randint(1, 1000) for _ in range(1000)]
         sorted_data = quick_sort(unsorted_list)

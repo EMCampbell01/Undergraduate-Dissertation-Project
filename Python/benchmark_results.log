@@ -1,0 +1,136 @@
+Benchmarking results
+
+Using 'time' for Conways_Game_Of_Life/life.py:
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.3)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+	Command being timed: "python3 Conways_Game_Of_Life/life.py"
+	User time (seconds): 1.60
+	System time (seconds): 0.46
+	Percent of CPU this job got: 47%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 42748
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 652
+	Minor (reclaiming a frame) page faults: 4935
+	Voluntary context switches: 10192
+	Involuntary context switches: 546
+	Swaps: 0
+	File system inputs: 45360
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Using 'hyperfine' for Conways_Game_Of_Life/life.py:
+Benchmark 1: python3 Conways_Game_Of_Life/life.py
+  Time (mean ± σ):      3.502 s ±  0.916 s    [User: 1.736 s, System: 0.181 s]
+  Range (min … max):    2.993 s …  6.030 s    10 runs
+ 
+
+Finished benchmarking Conways_Game_Of_Life/life.py
+
+Using 'time' for Quick_Sort/quick_sort.py:
+done
+	Command being timed: "python3 Quick_Sort/quick_sort.py"
+	User time (seconds): 0.04
+	System time (seconds): 0.00
+	Percent of CPU this job got: 37%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 10204
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1012
+	Voluntary context switches: 336
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Using 'hyperfine' for Quick_Sort/quick_sort.py:
+Benchmark 1: python3 Quick_Sort/quick_sort.py
+  Time (mean ± σ):     120.8 ms ± 117.1 ms    [User: 46.1 ms, System: 13.0 ms]
+  Range (min … max):    55.8 ms … 612.4 ms    36 runs
+ 
+
+Finished benchmarking Quick_Sort/quick_sort.py
+
+Using 'time' for Matrix_Multiplication/matrix_multiplication_numpy.py:
+	Command being timed: "python3 Matrix_Multiplication/matrix_multiplication_numpy.py"
+	User time (seconds): 29.55
+	System time (seconds): 0.26
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 92364
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 78
+	Minor (reclaiming a frame) page faults: 15022
+	Voluntary context switches: 6225
+	Involuntary context switches: 946
+	Swaps: 0
+	File system inputs: 15480
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Using 'hyperfine' for Matrix_Multiplication/matrix_multiplication_numpy.py:
+Benchmark 1: python3 Matrix_Multiplication/matrix_multiplication_numpy.py
+  Time (mean ± σ):     30.543 s ±  2.828 s    [User: 30.464 s, System: 0.194 s]
+  Range (min … max):   27.174 s … 34.204 s    10 runs
+ 
+
+Finished benchmarking Matrix_Multiplication/matrix_multiplication_numpy.py
+
+Using 'time' for Matrix_Multiplication/matrix_multiplication.py:
+	Command being timed: "python3 Matrix_Multiplication/matrix_multiplication.py"
+	User time (seconds): 0.86
+	System time (seconds): 0.01
+	Percent of CPU this job got: 92%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.93
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 10956
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1221
+	Voluntary context switches: 335
+	Involuntary context switches: 8
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Using 'hyperfine' for Matrix_Multiplication/matrix_multiplication.py:
+Benchmark 1: python3 Matrix_Multiplication/matrix_multiplication.py
+  Time (mean ± σ):     930.1 ms ±  39.8 ms    [User: 844.6 ms, System: 8.7 ms]
+  Range (min … max):   886.9 ms … 1007.1 ms    10 runs
+ 
+
+Finished benchmarking Matrix_Multiplication/matrix_multiplication.py

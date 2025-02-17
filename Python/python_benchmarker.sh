@@ -8,32 +8,30 @@ declare -A SCRIPTS=(
     [4]="Conways_Game_Of_Life/life.py"
 )
 
-# Display the list of scripts for the user to choose from
-echo "Available scripts for benchmarking:"
+# Define the log file for all results
+LOG_FILE="benchmark_results.log"
+echo "Benchmarking results" > "$LOG_FILE" # Overwrite the log file if it exists
+
+# Loop through each script in the list and benchmark them
 for key in "${!SCRIPTS[@]}"; do
-    echo "$key) ${SCRIPTS[$key]}"
+    PYTHON_SCRIPT="${SCRIPTS[$key]}"
+    echo -e "\nBenchmarking Python script: $PYTHON_SCRIPT"
+
+    # Check if the file exists
+    if [ ! -f "$PYTHON_SCRIPT" ]; then
+        echo "Error: File '$PYTHON_SCRIPT' does not exist. Skipping."
+        continue
+    fi
+
+    # Print and log the output of 'time' command
+    echo -e "\nUsing 'time' for $PYTHON_SCRIPT:" | tee -a "$LOG_FILE"
+    /usr/bin/time -v python3 "$PYTHON_SCRIPT" 2>&1 | tee -a "$LOG_FILE"
+
+    # Print and log the output of 'hyperfine' command
+    echo -e "\nUsing 'hyperfine' for $PYTHON_SCRIPT:" | tee -a "$LOG_FILE"
+    hyperfine --warmup 3 "python3 $PYTHON_SCRIPT" | tee -a "$LOG_FILE"
+
+    echo -e "\nFinished benchmarking $PYTHON_SCRIPT" | tee -a "$LOG_FILE"
 done
 
-# Prompt the user to select a script
-read -p "Enter the number of the script you want to benchmark: " SELECTION
-
-# Check if the selection is valid
-if [[ -z "${SCRIPTS[$SELECTION]}" ]]; then
-    echo "Invalid selection. Exiting."
-    exit 1
-fi
-
-PYTHON_SCRIPT="${SCRIPTS[$SELECTION]}"
-echo "Benchmarking Python script: $PYTHON_SCRIPT"
-
-# Check if the file exists
-if [ ! -f "$PYTHON_SCRIPT" ]; then
-    echo "Error: File '$PYTHON_SCRIPT' does not exist."
-    exit 1
-fi
-
-echo -e "\nUsing 'time':"
-/usr/bin/time -v python3 "$PYTHON_SCRIPT" 2>&1 | tee time_benchmark.log
-
-echo -e "\nUsing 'hyperfine':"
-hyperfine --warmup 3 "python3 $PYTHON_SCRIPT" | tee hyperfine_benchmark.log
+echo -e "\nAll scripts have been benchmarked. Results are saved to $LOG_FILE."

@@ -15,7 +15,7 @@ def numpy_matrix_multiply(matrix_a, matrix_b):
 
 if __name__ == "__main__":
     
-    for i in range(100):
+    for i in range(10):
         
         matrix_a = generate_random_matrix(1000, 1000)
         matrix_b = generate_random_matrix(1000, 1000)

@@ -23,8 +23,8 @@ def run_display(
     cell_fill_color = pygame.Color(cell_color)
     background_fill_color = pygame.Color(background_color)
 
-    running = True
-    while running:
+    generation = 0
+    while generation < 10:
 
         for event in pygame.event.get():
             
@@ -49,6 +49,7 @@ def run_display(
         pygame.display.flip()
         time.sleep(pause)
         grid = grid.evolve()
+        generation += 1
 
     pygame.quit()
 
