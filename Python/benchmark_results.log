@@ -4,22 +4,22 @@ Using 'time' for Conways_Game_Of_Life/life.py:
 pygame 2.6.1 (SDL 2.28.4, Python 3.12.3)
 Hello from the pygame community. https://www.pygame.org/contribute.html
 	Command being timed: "python3 Conways_Game_Of_Life/life.py"
-	User time (seconds): 1.60
-	System time (seconds): 0.46
-	Percent of CPU this job got: 47%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.39
+	User time (seconds): 1.82
+	System time (seconds): 1.21
+	Percent of CPU this job got: 29%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.31
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 42748
+	Maximum resident set size (kbytes): 42504
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 652
-	Minor (reclaiming a frame) page faults: 4935
-	Voluntary context switches: 10192
-	Involuntary context switches: 546
+	Major (requiring I/O) page faults: 717
+	Minor (reclaiming a frame) page faults: 4886
+	Voluntary context switches: 10264
+	Involuntary context switches: 447
 	Swaps: 0
-	File system inputs: 45360
+	File system inputs: 57000
 	File system outputs: 0
 	Socket messages sent: 0
 	Socket messages received: 0
@@ -29,8 +29,8 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 
 Using 'hyperfine' for Conways_Game_Of_Life/life.py:
 Benchmark 1: python3 Conways_Game_Of_Life/life.py
-  Time (mean ± σ):      3.502 s ±  0.916 s    [User: 1.736 s, System: 0.181 s]
-  Range (min … max):    2.993 s …  6.030 s    10 runs
+  Time (mean ± σ):      3.147 s ±  0.094 s    [User: 1.602 s, System: 0.178 s]
+  Range (min … max):    2.951 s …  3.260 s    10 runs
  
 
 Finished benchmarking Conways_Game_Of_Life/life.py
@@ -38,18 +38,18 @@ Finished benchmarking Conways_Game_Of_Life/life.py
 Using 'time' for Quick_Sort/quick_sort.py:
 done
 	Command being timed: "python3 Quick_Sort/quick_sort.py"
-	User time (seconds): 0.04
-	System time (seconds): 0.00
-	Percent of CPU this job got: 37%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.10
+	User time (seconds): 0.02
+	System time (seconds): 0.02
+	Percent of CPU this job got: 26%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.16
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 10204
+	Maximum resident set size (kbytes): 10224
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1012
+	Minor (reclaiming a frame) page faults: 1016
 	Voluntary context switches: 336
 	Involuntary context switches: 0
 	Swaps: 0
@@ -63,28 +63,28 @@ done
 
 Using 'hyperfine' for Quick_Sort/quick_sort.py:
 Benchmark 1: python3 Quick_Sort/quick_sort.py
-  Time (mean ± σ):     120.8 ms ± 117.1 ms    [User: 46.1 ms, System: 13.0 ms]
-  Range (min … max):    55.8 ms … 612.4 ms    36 runs
+  Time (mean ± σ):     107.0 ms ±  18.9 ms    [User: 30.8 ms, System: 7.1 ms]
+  Range (min … max):    80.0 ms … 150.3 ms    31 runs
  
 
 Finished benchmarking Quick_Sort/quick_sort.py
 
 Using 'time' for Matrix_Multiplication/matrix_multiplication_numpy.py:
 	Command being timed: "python3 Matrix_Multiplication/matrix_multiplication_numpy.py"
-	User time (seconds): 29.55
-	System time (seconds): 0.26
+	User time (seconds): 33.43
+	System time (seconds): 0.28
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.87
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:33.80
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 92364
+	Maximum resident set size (kbytes): 92456
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 78
-	Minor (reclaiming a frame) page faults: 15022
-	Voluntary context switches: 6225
-	Involuntary context switches: 946
+	Minor (reclaiming a frame) page faults: 15542
+	Voluntary context switches: 6224
+	Involuntary context switches: 554
 	Swaps: 0
 	File system inputs: 15480
 	File system outputs: 0
@@ -96,28 +96,28 @@ Using 'time' for Matrix_Multiplication/matrix_multiplication_numpy.py:
 
 Using 'hyperfine' for Matrix_Multiplication/matrix_multiplication_numpy.py:
 Benchmark 1: python3 Matrix_Multiplication/matrix_multiplication_numpy.py
-  Time (mean ± σ):     30.543 s ±  2.828 s    [User: 30.464 s, System: 0.194 s]
-  Range (min … max):   27.174 s … 34.204 s    10 runs
+  Time (mean ± σ):     37.601 s ±  5.670 s    [User: 36.924 s, System: 0.359 s]
+  Range (min … max):   28.654 s … 45.306 s    10 runs
  
 
 Finished benchmarking Matrix_Multiplication/matrix_multiplication_numpy.py
 
 Using 'time' for Matrix_Multiplication/matrix_multiplication.py:
 	Command being timed: "python3 Matrix_Multiplication/matrix_multiplication.py"
-	User time (seconds): 0.86
+	User time (seconds): 0.85
 	System time (seconds): 0.01
-	Percent of CPU this job got: 92%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.93
+	Percent of CPU this job got: 81%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.07
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 10956
+	Maximum resident set size (kbytes): 11000
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1221
-	Voluntary context switches: 335
-	Involuntary context switches: 8
+	Minor (reclaiming a frame) page faults: 1219
+	Voluntary context switches: 334
+	Involuntary context switches: 6
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0
@@ -129,8 +129,8 @@ Using 'time' for Matrix_Multiplication/matrix_multiplication.py:
 
 Using 'hyperfine' for Matrix_Multiplication/matrix_multiplication.py:
 Benchmark 1: python3 Matrix_Multiplication/matrix_multiplication.py
-  Time (mean ± σ):     930.1 ms ±  39.8 ms    [User: 844.6 ms, System: 8.7 ms]
-  Range (min … max):   886.9 ms … 1007.1 ms    10 runs
+  Time (mean ± σ):     956.6 ms ±  59.6 ms    [User: 863.3 ms, System: 7.4 ms]
+  Range (min … max):   887.9 ms … 1043.2 ms    10 runs
  
 
 Finished benchmarking Matrix_Multiplication/matrix_multiplication.py

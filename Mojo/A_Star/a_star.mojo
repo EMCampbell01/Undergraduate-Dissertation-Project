@@ -1,6 +1,10 @@
+from emberjson import parse
 from collections import Dict, Set
 from python import Python
 from math import sqrt
+
+struct ParseOptions:
+    var ignore_unicode: Bool
 
 @value
 struct Edge(StringableRaising):
@@ -41,20 +45,24 @@ struct Graph(StringableRaising):
     var nodes: Dict[String, Node]
 
     @staticmethod
-    def from_json(json_data: String) -> Graph:
+    fn from_json(json_string: String) raises -> Graph:
 
-        json = Python.import_module("json")
-        data = json.loads(json_data)
-        
         graph = Graph(Dict[String, Node]())
 
-        # Add nodes
-        for node in data["nodes"]:
-            graph.add_node(str(node["id"]), int(node["x"]), int(node["y"]))
+        try:
+            json_object = parse(json_string)
 
-        # Add edges
-        for edge in data["edges"]:
-            graph.add_edge(str(edge["source"]), str(edge["target"]), int(edge["weight"]))
+            nodes = json_object.object()["nodes"].array()
+            edges = json_object.object()["edges"].array()
+
+            for node in nodes:
+                graph.add_node(str(node[].object()["id"].string()), int(node[].object()["x"].int()), int(node[].object()["y"].int()))
+
+            for edge in edges:
+                graph.add_edge(str(edge[].object()["source"].string()), str(edge[].object()["target"].string()), int(edge[].object()["weight"].int()))
+
+        except:
+            print("Error parsing JSON")
 
         return graph
 
@@ -172,22 +180,17 @@ struct Graph(StringableRaising):
 
         raise Error("Path not found")
 
-
 def main():
 
-    nd = Dict[String, Node]()
-    g = Graph(nd)
+    with open("A_Star/graph.json", "r") as f:
+        json_string = f.read()
 
-    # Load JSON from file
-    with open("graph.json", "r") as f:
-        json_data = f.read()
-
-    # Create a graph instance from JSON
-    graph = Graph.from_json(json_data)
+    print(json_string)
+    graph = Graph.from_json(json_string)
 
     path = graph.get_path("A", "E")
     for step in path:
-        print(str(step[]))
+        print(str(step[]))  
 
     print("end.")
     
