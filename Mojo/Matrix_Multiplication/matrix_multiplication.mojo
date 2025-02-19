@@ -17,10 +17,10 @@ fn multiply_matrices(A: Matrix, B: Matrix) raises -> Matrix:
 
 def main():
 
-    for i in range(100):
+    for i in range(10):
 
-        A = Matrix.random(1000, 1000)
-        B = Matrix.random(1000, 1000)
+        A = Matrix.random(100, 100)
+        B = Matrix.random(100, 100)
         
         result = multiply_matrices(A, B)
         

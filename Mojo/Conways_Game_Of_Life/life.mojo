@@ -27,8 +27,8 @@ def run_display(
     cell_fill_color = pygame.Color(cell_color)
     background_fill_color = pygame.Color(background_color)
 
-    running = True
-    while running:
+    generation = 0
+    while generation <10:
         # Poll for events
         event = pygame.event.poll()
         if event.type == pygame.QUIT:
@@ -62,6 +62,7 @@ def run_display(
 
         # Next generation
         grid = grid.evolve()
+        generation += 1
 
     # Shut down pygame cleanly
     pygame.quit()

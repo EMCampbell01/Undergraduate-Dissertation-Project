@@ -1,0 +1,113 @@
+Mojo Benchmarking results
+
+Using 'time' for Conways_Game_Of_Life/life.mojo:
+<frozen importlib._bootstrap>:488: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.
+shm_open() failed: No such file or directory
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5728:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2722:(snd_pcm_open_noupdate) Unknown PCM default
+pygame 2.6.1 (SDL 2.30.10, Python 3.12.8)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+	Command being timed: "mojo Conways_Game_Of_Life/life.mojo"
+	User time (seconds): 2.51
+	System time (seconds): 0.92
+	Percent of CPU this job got: 31%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.72
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 141596
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1498
+	Minor (reclaiming a frame) page faults: 19362
+	Voluntary context switches: 38947
+	Involuntary context switches: 32
+	Swaps: 0
+	File system inputs: 209680
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Using 'hyperfine' for Conways_Game_Of_Life/life.mojo:
+Benchmark 1: mojo Conways_Game_Of_Life/life.mojo
+  Time (mean ± σ):      9.052 s ±  1.092 s    [User: 2.581 s, System: 0.584 s]
+  Range (min … max):    8.262 s … 11.990 s    10 runs
+ 
+
+Finished benchmarking Conways_Game_Of_Life/life.mojo
+
+Using 'time' for Quick_Sort/quick_sort.mojo:
+done
+	Command being timed: "mojo Quick_Sort/quick_sort.mojo"
+	User time (seconds): 3.03
+	System time (seconds): 0.72
+	Percent of CPU this job got: 59%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 257604
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 986
+	Minor (reclaiming a frame) page faults: 50355
+	Voluntary context switches: 29458
+	Involuntary context switches: 103
+	Swaps: 0
+	File system inputs: 144848
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Using 'hyperfine' for Quick_Sort/quick_sort.mojo:
+Benchmark 1: mojo Quick_Sort/quick_sort.mojo
+  Time (mean ± σ):      2.836 s ±  0.121 s    [User: 0.221 s, System: 0.205 s]
+  Range (min … max):    2.685 s …  3.104 s    10 runs
+ 
+
+Finished benchmarking Quick_Sort/quick_sort.mojo
+
+Using 'time' for Matrix_Multiplication/matrix_multiplication.mojo:
+	Command being timed: "mojo Matrix_Multiplication/matrix_multiplication.mojo"
+	User time (seconds): 4.52
+	System time (seconds): 2.13
+	Percent of CPU this job got: 79%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 260976
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1002
+	Minor (reclaiming a frame) page faults: 51211
+	Voluntary context switches: 30274
+	Involuntary context switches: 78
+	Swaps: 0
+	File system inputs: 145000
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Using 'hyperfine' for Matrix_Multiplication/matrix_multiplication.mojo:
+Benchmark 1: mojo Matrix_Multiplication/matrix_multiplication.mojo
+  Time (mean ± σ):      3.497 s ±  1.195 s    [User: 0.267 s, System: 0.268 s]
+  Range (min … max):    2.769 s …  5.840 s    10 runs
+ 
+
+Finished benchmarking Matrix_Multiplication/matrix_multiplication.mojo

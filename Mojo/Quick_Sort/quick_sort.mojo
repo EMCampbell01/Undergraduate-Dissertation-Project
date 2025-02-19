@@ -25,7 +25,7 @@ fn quick_sort(arr: List[Int]) -> List[Int]:
 
 def main():
     
-    for i in range(10000):
+    for i in range(10):
         
         unsorted_list = List[Int]()
         for _ in range(1000):
