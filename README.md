@@ -29,11 +29,15 @@ Quick Sort is a highly efficient, comparison-based sorting algorithm that employ
 
 Conway’s Game of Life is a cellular automaton devised by mathematician John Horton Conway in 1970. Conway’s Game of Life is a computationally light but visually complex simulation, requiring updates to a grid of cells based on simple rules. It tests a language’s ability to handle iterative, rule-based computations and graphical output.
 
-## Results
+## Results (PLACEHOLDER)
 
 | Algorithm                     | Python Time | Mojo Time | Python Memory Usage | Mojo Memory Usage |
 |-------------------------------|-------------|-----------|---------------------|-------------------|
-| A*                            | 15ms        | 12ms      | 50MB                | 45MB              |
-| Conway's Game of Life         | 30ms        | 28ms      | 70MB                | 60MB              |
-| Matrix Multiplication         | 50ms        | 45ms      | 100MB               | 90MB              |
-| Quick Sort                    | 10ms        | 8ms       | 30MB                | 25MB              |
+| A*                            | 0           | 0         | 0                   | 0                 |
+| Conway's Game of Life         | 0           | 0         | 0                   | 0                 |
+| Matrix Multiplication         | 0           | 0         | 0                   | 0                 |
+| Quick Sort                    | 0           | 0         | 0                   | 0                 |
+
+## Conclusion (PLACEHOLDER)
+
+This is placeholder text.
