@@ -40,9 +40,8 @@ fn generate_unsorted_list_mojo(size: Int) -> List[Int]:
 
 fn  quick_sort_benchmark():
     try:
-        for i in range(10):
-            var unsorted_list: List[Int] = generate_unsorted_list_mojo(1000)
-            var sorted_data: List[Int] = quick_sort(unsorted_list)
+        var unsorted_list: List[Int] = generate_unsorted_list_mojo(1000)
+        var sorted_data: List[Int] = quick_sort(unsorted_list)
     except:
         print("Error occurred while sorting the list.")
         return
