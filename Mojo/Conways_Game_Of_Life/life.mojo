@@ -1,6 +1,7 @@
 from grid import Grid
 from python import Python
 import time
+import benchmark
 
 
 def run_display(
@@ -67,6 +68,19 @@ def run_display(
     # Shut down pygame cleanly
     pygame.quit()
 
-def main():
-    start = Grid.random(128, 128)
-    run_display(start)
+fn benchmark_game_of_life() -> None:
+    try:
+        var start: Grid = Grid.random(128, 128)
+        run_display(start)
+    except:
+        print("Error occurred while running the benchmark.")
+        return
+
+fn main() -> None:
+
+    try:
+        var report = benchmark.run[benchmark_game_of_life]()
+        report.print()
+    except:
+        print("Error occurred while running the benchmark.")
+        return
