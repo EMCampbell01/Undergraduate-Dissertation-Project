@@ -2,6 +2,7 @@ from emberjson import parse
 from collections import Dict, Set
 from python import Python
 from math import sqrt
+import benchmark
 
 struct ParseOptions:
     var ignore_unicode: Bool
@@ -47,7 +48,7 @@ struct Graph(StringableRaising):
     @staticmethod
     fn from_json(json_string: String) raises -> Graph:
 
-        graph = Graph(Dict[String, Node]())
+        var graph: Graph = Graph(Dict[String, Node]())
 
         try:
             json_object = parse(json_string)
@@ -180,18 +181,28 @@ struct Graph(StringableRaising):
 
         raise Error("Path not found")
 
-def main():
+fn benchmark_a_star() -> None:
 
-    with open("A_Star/graph.json", "r") as f:
-        json_string = f.read()
+    try:
+        var json_string: String = ""
 
-    print(json_string)
-    graph = Graph.from_json(json_string)
+        with open("A_Star/graph.json", "r") as f:
+            json_string = f.read()
 
-    path = graph.get_path("A", "E")
-    for step in path:
-        print(str(step[]))  
+        var graph: Graph = Graph.from_json(json_string)
+        var path: List[String] = graph.get_path("A", "E")
 
-    print("end.")
+    except:
+        print("Error occurred while running the benchmark.")
+        return
+
+fn main():
+
+    try:
+        var report = benchmark.run[benchmark_a_star]()
+        report.print()
+    except:
+        print("Error occurred while running the benchmark.")
+        return
     
 
