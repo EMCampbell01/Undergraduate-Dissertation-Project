@@ -1,6 +1,7 @@
 from matrix import Matrix
+import benchmark
 
-fn multiply_matrices(A: Matrix, B: Matrix) raises -> Matrix:
+fn matmul(A: Matrix, B: Matrix) raises -> Matrix:
 
     if A.cols != B.rows:
         raise Error("Number of columns in A must equal the number of rows in B for matrix multiplication.")
@@ -14,13 +15,22 @@ fn multiply_matrices(A: Matrix, B: Matrix) raises -> Matrix:
 
     return C
 
+fn benchmark_matmul() -> None:
 
-def main():
+    try:
+        var A: Matrix = Matrix.random(100, 100)
+        var B: Matrix = Matrix.random(100, 100)
+        var result: Matrix = matmul(A, B)
+    except:
+        print("Error occurred while running the benchmark.")
+        return
 
-    for i in range(10):
+fn main():
 
-        A = Matrix.random(100, 100)
-        B = Matrix.random(100, 100)
-        
-        result = multiply_matrices(A, B)
+    try:
+        var report = benchmark.run[benchmark_matmul]()
+        report.print()
+    except:
+        print("Error occurred while running the benchmark.")
+        return
         
