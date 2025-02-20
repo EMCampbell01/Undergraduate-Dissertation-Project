@@ -38,7 +38,7 @@ fn generate_unsorted_list_mojo(size: Int) -> List[Int]:
         unsorted_list.append(int(random.random_si64(1, 1000)))
     return unsorted_list
 
-fn  quick_sort_benchmark():
+fn  benchmark_quick_sort():
     try:
         var unsorted_list: List[Int] = generate_unsorted_list_mojo(1000)
         var sorted_data: List[Int] = quick_sort(unsorted_list)
@@ -49,7 +49,7 @@ fn  quick_sort_benchmark():
 fn main():
     
     try:
-        var report = benchmark.run[quick_sort_benchmark]()
+        var report = benchmark.run[benchmark_quick_sort]()
         report.print()
     except:
         print("Error occurred while running the benchmark.")
