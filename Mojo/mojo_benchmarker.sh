@@ -3,9 +3,8 @@
 # Define a list of available Mojo scripts
 declare -A SCRIPTS=(
     [1]="Matrix_Multiplication/matrix_multiplication.mojo"
-    [2]="Matrix_Multiplication/matrix_multiplication_numpy.mojo"
-    [3]="Quick_Sort/quick_sort.mojo"
-    [4]="Conways_Game_Of_Life/life.mojo"
+    [2]="Quick_Sort/quick_sort.mojo"
+    [3]="Conways_Game_Of_Life/life.mojo"
 )
 
 # Define the log file for all results
