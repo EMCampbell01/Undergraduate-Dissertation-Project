@@ -14,22 +14,22 @@ ALSA lib pcm.c:2722:(snd_pcm_open_noupdate) Unknown PCM default
 pygame 2.6.1 (SDL 2.30.10, Python 3.12.8)
 Hello from the pygame community. https://www.pygame.org/contribute.html
 	Command being timed: "mojo Conways_Game_Of_Life/life.mojo"
-	User time (seconds): 2.81
-	System time (seconds): 1.14
-	Percent of CPU this job got: 20%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.37
+	User time (seconds): 2.62
+	System time (seconds): 1.48
+	Percent of CPU this job got: 30%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.35
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 137900
+	Maximum resident set size (kbytes): 144628
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 1511
-	Minor (reclaiming a frame) page faults: 17845
-	Voluntary context switches: 39230
-	Involuntary context switches: 417
+	Major (requiring I/O) page faults: 1506
+	Minor (reclaiming a frame) page faults: 19639
+	Voluntary context switches: 39220
+	Involuntary context switches: 538
 	Swaps: 0
-	File system inputs: 213536
+	File system inputs: 213032
 	File system outputs: 0
 	Socket messages sent: 0
 	Socket messages received: 0
@@ -39,61 +39,63 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 
 Using 'hyperfine' for Conways_Game_Of_Life/life.mojo:
 Benchmark 1: mojo Conways_Game_Of_Life/life.mojo
-  Time (mean ± σ):      9.165 s ±  0.938 s    [User: 2.549 s, System: 0.605 s]
-  Range (min … max):    8.281 s … 11.676 s    10 runs
+  Time (mean ± σ):      9.231 s ±  1.193 s    [User: 2.579 s, System: 0.564 s]
+  Range (min … max):    8.131 s … 12.154 s    10 runs
  
 
 Finished benchmarking Conways_Game_Of_Life/life.mojo
 
 Using 'time' for Quick_Sort/quick_sort.mojo:
+/c/Users/euanm/git/Undergraduate-Dissertation-Project/Mojo/Quick_Sort/quick_sort.mojo:41:41: error: use of unknown declaration 'BenchmarkReport'
+fn  quick_sort_benchmark() -> benchmark.BenchmarkReport:
+                                        ^~~~~~~~~~~~~~~
+mojo: error: failed to parse the provided Mojo source module
+Command exited with non-zero status 1
 	Command being timed: "mojo Quick_Sort/quick_sort.mojo"
-	User time (seconds): 2.71
-	System time (seconds): 0.60
-	Percent of CPU this job got: 53%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.14
+	User time (seconds): 0.18
+	System time (seconds): 0.27
+	Percent of CPU this job got: 12%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.69
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 148616
+	Maximum resident set size (kbytes): 97872
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 1116
-	Minor (reclaiming a frame) page faults: 23657
-	Voluntary context switches: 26585
-	Involuntary context switches: 259
+	Major (requiring I/O) page faults: 653
+	Minor (reclaiming a frame) page faults: 10409
+	Voluntary context switches: 16348
+	Involuntary context switches: 2
 	Swaps: 0
-	File system inputs: 173264
+	File system inputs: 121968
 	File system outputs: 0
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0
 	Page size (bytes): 4096
-	Exit status: 0
+	Exit status: 1
 
 Using 'hyperfine' for Quick_Sort/quick_sort.mojo:
 Benchmark 1: mojo Quick_Sort/quick_sort.mojo
-  Time (mean ± σ):      4.104 s ±  0.203 s    [User: 0.408 s, System: 0.300 s]
-  Range (min … max):    3.794 s …  4.413 s    10 runs
- 
 
 Finished benchmarking Quick_Sort/quick_sort.mojo
 
 Using 'time' for Matrix_Multiplication/matrix_multiplication.mojo:
 	Command being timed: "mojo Matrix_Multiplication/matrix_multiplication.mojo"
 	User time (seconds): 0.27
-	System time (seconds): 0.18
-	Percent of CPU this job got: 13%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.50
+	System time (seconds): 0.27
+	Percent of CPU this job got: 16%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.28
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 96516
+	Maximum resident set size (kbytes): 96964
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 674
-	Minor (reclaiming a frame) page faults: 11696
-	Voluntary context switches: 16917
-	Involuntary context switches: 9
+	Minor (reclaiming a frame) page faults: 11756
+	Voluntary context switches: 16887
+	Involuntary context switches: 10
 	Swaps: 0
 	File system inputs: 124016
 	File system outputs: 0
@@ -105,8 +107,8 @@ Using 'time' for Matrix_Multiplication/matrix_multiplication.mojo:
 
 Using 'hyperfine' for Matrix_Multiplication/matrix_multiplication.mojo:
 Benchmark 1: mojo Matrix_Multiplication/matrix_multiplication.mojo
-  Time (mean ± σ):      3.053 s ±  0.141 s    [User: 0.272 s, System: 0.190 s]
-  Range (min … max):    2.886 s …  3.284 s    10 runs
+  Time (mean ± σ):      4.192 s ±  0.963 s    [User: 0.514 s, System: 0.545 s]
+  Range (min … max):    3.139 s …  6.176 s    10 runs
  
 
 Finished benchmarking Matrix_Multiplication/matrix_multiplication.mojo

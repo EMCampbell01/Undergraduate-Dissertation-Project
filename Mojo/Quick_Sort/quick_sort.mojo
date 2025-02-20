@@ -1,4 +1,5 @@
 from python import Python
+import benchmark
 import random
 
 fn quick_sort(arr: List[Int]) -> List[Int]:
@@ -31,20 +32,26 @@ def generate_unsorted_list_python(size: Int) -> List[Int]:
     return unsorted_list
 
 # Mojo's random implementation is very slow because it's a crytographic RNG.
-fn generateunsorted_list_mojo(size: Int) -> List[Int]:
+fn generate_unsorted_list_mojo(size: Int) -> List[Int]:
     var unsorted_list: List[Int] = List[Int]()
     for _ in range(1000):
         unsorted_list.append(int(random.random_si64(1, 1000)))
     return unsorted_list
 
+fn  quick_sort_benchmark():
+    try:
+        for i in range(10):
+            var unsorted_list: List[Int] = generate_unsorted_list_mojo(1000)
+            var sorted_data: List[Int] = quick_sort(unsorted_list)
+    except:
+        print("Error occurred while sorting the list.")
+        return
+
 fn main():
     
-    for i in range(10):
-        
-        try:
-            var unsorted_list: List[Int] = generate_unsorted_list_mojo(1000)
-            
-            var sorted_data: List[Int] = quick_sort(unsorted_list)
-        except:
-            print("Error occurred while sorting the list.")
-            return
+    try:
+        var report = benchmark.run[quick_sort_benchmark]()
+        report.print()
+    except:
+        print("Error occurred while running the benchmark.")
+        return
