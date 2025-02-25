@@ -1,6 +1,7 @@
 import pygame
 import time
-from grid import Grid
+# from grid import Grid
+from Conways_Game_Of_Life.grid import Grid
 
 
 def run_display(
@@ -53,6 +54,9 @@ def run_display(
 
     pygame.quit()
 
+
+def generate_random_grid(rows: int, cols: int) -> Grid:
+    return Grid.random(rows, cols)
 
 def main():
     start = Grid.random(128, 128)

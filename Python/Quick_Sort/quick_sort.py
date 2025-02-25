@@ -11,10 +11,17 @@ def quick_sort(arr):
     
     return quick_sort(left) + middle + quick_sort(right)
 
+def generate_unsorted_list():
+    return [random.randint(1, 1000) for _ in range(1000)]
+
+def benchmark_quick_sort():
+    for i in range(100):
+        unsorted_list = generate_unsorted_list()
+        sorted_data = quick_sort(unsorted_list)
 
 if __name__ == "__main__":
 
-    for i in range(10):
+    for i in range(100):
         
         unsorted_list = [random.randint(1, 1000) for _ in range(1000)]
         sorted_data = quick_sort(unsorted_list)
