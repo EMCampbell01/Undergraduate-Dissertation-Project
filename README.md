@@ -31,6 +31,17 @@ Conway’s Game of Life is a cellular automaton devised by mathematician John Ho
 
 ## Results (PLACEHOLDER)
 
+### Micro Benchmark Results
+
+| Algorithm                     | CPython Time | Mojo Time |
+|-------------------------------|--------------|-----------|
+| A*                            | 0            | 0         |
+| Conway's Game of Life         | 0            | 0         |
+| Matrix Multiplication         | 0            | 0         |
+| Quick Sort                    | 0            | 0         |
+
+### Macro Benchmark Results
+
 | Algorithm                     | Python Time | Mojo Time | Python Memory Usage | Mojo Memory Usage |
 |-------------------------------|-------------|-----------|---------------------|-------------------|
 | A*                            | 0           | 0         | 0                   | 0                 |

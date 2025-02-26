@@ -8,7 +8,7 @@ declare -A SCRIPTS=(
 )
 
 # Define the log file for all results
-LOG_FILE="mojo_benchmark_results.log"
+LOG_FILE="mojo_macro_benchmark_results.log"
 echo "Mojo Benchmarking results" > "$LOG_FILE" # Overwrite the log file if it exists
 
 # Loop through each script in the list and benchmark them

@@ -39,7 +39,7 @@ def write_stats(file_path: String, stats: List[Float64], benchmark_name: String,
 # Run the benchmarks
 def main():
     # Open the file to write the benchmarking results
-    file_path = "mojo_internal_benchmarking.log"
+    file_path = "../mojo_micro_benchmarking.log"
     with open(file_path, "w") as file:
         quick_sort_times = List[Int]()
         
@@ -75,7 +75,7 @@ def main():
         json_string = String()
 
         try:
-            with open("Mojo/A_Star/graph.json", "r") as f:
+            with open("A_Star/graph.json", "r") as f:
                 json_string = f.read()
         except:
             file.write("Error occurred while reading the graph.json file.\n")

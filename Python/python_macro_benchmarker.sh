@@ -2,14 +2,14 @@
 
 # Define a list of available Python scripts
 declare -A SCRIPTS=(
-    [1]="Matrix_Multiplication/matrix_multiplication.py"
-    [2]="Matrix_Multiplication/matrix_multiplication_numpy.py"
-    [3]="Quick_Sort/quick_sort.py"
-    [4]="Conways_Game_Of_Life/life.py"
+    [1]="Python/Matrix_Multiplication/matrix_multiplication.py"
+    [2]="Python/Matrix_Multiplication/matrix_multiplication_numpy.py"
+    [3]="Python/Quick_Sort/quick_sort.py"
+    [4]="Python/Conways_Game_Of_Life/life.py"
 )
 
 # Define the log file for all results
-LOG_FILE="benchmark_results.log"
+LOG_FILE="python_macro_benchmark_results.log"
 echo "Benchmarking results" > "$LOG_FILE" # Overwrite the log file if it exists
 
 # Loop through each script in the list and benchmark them

@@ -5,7 +5,7 @@ from A_Star.a_star import Graph
 from Conways_Game_Of_Life.life import run_display, generate_random_grid
 
 # Decorator to benchmark functions
-def benchmark(iterations=100, log_file="python_internal_benchmark_results.log"):
+def benchmark(iterations=100, log_file="python_micro_benchmark_results.log"):
     def decorator(func):
         def wrapper(setup_func, *args, **kwargs):
             times = []
