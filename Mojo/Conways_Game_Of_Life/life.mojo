@@ -1,4 +1,4 @@
-from grid import Grid
+from .grid import Grid
 from python import Python
 import time
 import benchmark
@@ -67,6 +67,9 @@ def run_display(
 
     # Shut down pygame cleanly
     pygame.quit()
+
+def generate_random_grid() -> Grid:
+    return Grid.random(128, 128)
 
 fn benchmark_game_of_life() -> None:
     try:

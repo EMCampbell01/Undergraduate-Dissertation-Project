@@ -1,0 +1,13 @@
+Run all code in WSL
+
+PYTHON
+
+activate python venv from root: "source Python/myenv/bin/activate"
+deactivate python venv: "deactivate"
+
+run internal benchmarker: python3 Python/python_benchmarker.py
+
+MOJO
+
+activate magic env from Mojo: "magic shell"
+deactivate magic env: "exit"

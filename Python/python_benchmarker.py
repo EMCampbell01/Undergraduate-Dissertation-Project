@@ -2,10 +2,10 @@ import time
 from Quick_Sort.quick_sort import quick_sort, generate_unsorted_list
 from Matrix_Multiplication.matrix_multiplication import generate_random_matrix, matrix_multiply
 from A_Star.a_star import Graph
-from Conways_Game_Of_Life.life import run_display, generate_random_grid    
+from Conways_Game_Of_Life.life import run_display, generate_random_grid
 
 # Decorator to benchmark functions
-def benchmark(iterations=100):
+def benchmark(iterations=100, log_file="python_internal_benchmark_results.log"):
     def decorator(func):
         def wrapper(setup_func, *args, **kwargs):
             times = []
@@ -22,11 +22,18 @@ def benchmark(iterations=100):
             max_time = max(times)
             mean_time = sum(times) / len(times)
 
-            print(f"Benchmarking {func.__name__} function")
-            print(f"Benchmark over {iterations} iterations:")
-            print(f"Min time: {min_time:.6f} seconds")
-            print(f"Max time: {max_time:.6f} seconds")
-            print(f"Mean time: {mean_time:.6f} seconds\n")
+            result_str = (f"Benchmarking {func.__name__} function\n"
+                          f"Benchmark over {iterations} iterations:\n"
+                          f"Min time: {min_time:.6f} seconds\n"
+                          f"Max time: {max_time:.6f} seconds\n"
+                          f"Mean time: {mean_time:.6f} seconds\n\n")
+
+            # Print the results to the console
+            print(result_str)
+
+            # Write the results to the log file
+            with open(log_file, "a") as f:
+                f.write(result_str)
 
         return wrapper
     return decorator
@@ -59,7 +66,7 @@ def setup_matrix_multiplication():
     return matrix_a, matrix_b
 
 def setup_a_star():
-    with open("Python\A_star\graph.json", "r") as f:
+    with open(r"Python/A_star/graph.json", "r") as f:
         json_string = f.read()
     graph = Graph().from_json(json_string)
     return graph

@@ -1,0 +1,23 @@
+Benchmarking benchmark_quick_sort function
+Benchmark over: 100 iterations
+Min time: 177530 ns
+Max time: 489693 ns
+Mean time: 227783.76 ns
+
+Benchmarking benchmark_a_star function
+Benchmark over: 100 iterations
+Min time: 11679 ns
+Max time: 489693 ns
+Mean time: 246642.84 ns
+
+Benchmarking benchmark_game_of_life function
+Benchmark over: 10 iterations
+Min time: 11679 ns
+Max time: 5384738972 ns
+Mean time: 3036649042.6 ns
+
+Benchmarking benchmark_matmul function
+Benchmark over: 100 iterations
+Min time: 11679 ns
+Max time: 5384738972 ns
+Mean time: 306728258.71 ns

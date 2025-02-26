@@ -1,0 +1,24 @@
+Benchmarking benchmark_quick_sort function
+Benchmark over 100 iterations:
+Min time: 0.000813 seconds
+Max time: 0.001720 seconds
+Mean time: 0.001073 seconds
+
+Benchmarking benchmark_matrix_multiplication function
+Benchmark over 100 iterations:
+Min time: 0.064574 seconds
+Max time: 0.155007 seconds
+Mean time: 0.075225 seconds
+
+Benchmarking benchmark_a_star function
+Benchmark over 100 iterations:
+Min time: 0.000013 seconds
+Max time: 0.000143 seconds
+Mean time: 0.000027 seconds
+
+Benchmarking benchmark_conways_game_of_life function
+Benchmark over 10 iterations:
+Min time: 1.349200 seconds
+Max time: 1.599152 seconds
+Mean time: 1.445791 seconds
+
